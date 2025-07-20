@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Remove default button styles */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Remove default input styles */
+input {
+  border: none;
+  outline: none;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Focus styles */
+button:focus,
+input:focus {
+  outline: 2px solid #4ECDC4;
+  outline-offset: 2px;
+}
+
+/* Disable text selection on canvas */
+canvas {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 10px 15px;
+    gap: 10px;
+  }
+  
+  .color-button {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .stroke-width-slider {
+    width: 60px;
+  }
+}
