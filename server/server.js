@@ -41,6 +41,13 @@ const roomRoutes = require('./routes/rooms');
 // Routes
 app.use('/api/rooms', roomRoutes);
 
+// Serve static files from the React app
+const path = require('path');
+app.use(express.static(path.join(__dirname, '../client/dist')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+});
+
 // Socket.io connection handling
 const socketHandler = require('./socket/socketHandler');
 socketHandler(io);
@@ -49,4 +56,3 @@ const PORT = process.env.PORT || 5000;
   server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
