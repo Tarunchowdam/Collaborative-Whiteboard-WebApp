@@ -38,12 +38,13 @@ connectDB();
 // Import routes
 const roomRoutes = require('./routes/rooms');
 
-// Routes
+// API Routes
 app.use('/api/rooms', roomRoutes);
 
 // Serve static files from the React app
 const path = require('path');
 app.use(express.static(path.join(__dirname, '../client/dist')));
+// Correct wildcard route for SPA
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
@@ -53,7 +54,7 @@ const socketHandler = require('./socket/socketHandler');
 socketHandler(io);
 
 const PORT = process.env.PORT || 5000;
-  server.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
  
