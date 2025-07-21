@@ -219,5 +219,5 @@ You now have a full-stack, production-ready app deployed on Render.com with:
 - HTTPS and auto-deploys
 
 ---
+@Tarunchowdam
 
-**If you run into any errors or need help with a specific step, paste the error here and I’ll help you fix it!**
